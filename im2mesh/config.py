@@ -184,6 +184,8 @@ def get_inputs_field(mode, cfg):
     input_type = cfg['data']['input_type']
     with_transforms = cfg['data']['with_transforms']
 
+    print(input_type)
+
     if input_type is None:
         inputs_field = None
     elif input_type == 'img':

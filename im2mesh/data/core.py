@@ -90,6 +90,7 @@ class Shapes3dDataset(data.Dataset):
                 {'category': c, 'model': m}
                 for m in models_c
             ]
+            print("----------------------",len(models_c),"---------------------------")
 
     def __len__(self):
         ''' Returns the length of the dataset.
@@ -115,8 +116,8 @@ class Shapes3dDataset(data.Dataset):
             except Exception:
                 if self.no_except:
                     logger.warn(
-                        'Error occured when loading field %s of model %s'
-                        % (field_name, model)
+                        'Error occured when loading field %s of model %s->%s'
+                        % (field_name, model_path,idx)
                     )
                     return None
                 else:
